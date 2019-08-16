@@ -1,14 +1,7 @@
-resources:
-  containers:
-    - container: msteams
-      image: teamsmcr.azurecr.io/teams-client-base:latest
-      endpoint: TeamsMCR
-      options: '--cpus=3 --memory=10GB -v "/usr/local/share/.cache/yarn":"/usr/local/share/.cache/yarn"'
-
-trigger: none
+trigger: 
+  - master
 
 steps:
-
 - script: |
     yarn install
     yarn run build
